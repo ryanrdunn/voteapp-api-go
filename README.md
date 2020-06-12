@@ -97,3 +97,12 @@ or by using the binary:
 ```
 MONGO_CONN_STR=mongodb://localhost:27017/langdb MONGO_USERNAME=admin MONGO_PASSWORD=password ./api
 ```
+
+Steps for Building docker image
+1. Build the go api binary file running folling command (this isnt actually needed; just to illustrate point)
+    go build -o api
+2. Build the go api binary for correct operating system; run following comman;
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o api
+3. Build the docker image by running following command;
+    docker build -t voteapp/api-golang:v1 .
+4. 
